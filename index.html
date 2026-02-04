@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Klariza Silva | Psicóloga - EMDR e Traumas</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            terracotta: '#972E45 ',
+                            brown: '#5C4B43',
+                            beige: '#EBE5DE',
+                            light: '#F9F7F4',
+                            gold: '#C5A065',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Lato', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        
+        /* Botão WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            animation: pulse-brand 2s infinite;
+        }
+        @keyframes pulse-brand {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(157, 68, 82, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(157, 68, 82, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(157, 68, 82, 0); }
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #9D4452, transparent);
+            width: 100px;
+            margin: 20px auto;
+        }
+
+        /* Estilos para o FAQ (Acordeão) */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, opacity 0.4s ease-out, padding 0.4s ease;
+            opacity: 0;
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-brand-light text-brand-brown font-sans antialiased selection:bg-brand-terracotta selection:text-white">
+
+    <nav class="fixed w-full z-50 bg-brand-light/90 backdrop-blur-md border-b border-brand-beige shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                
+                <div class="flex-shrink-0 w-48">
+                    <div class="flex flex-col items-start justify-center">
+                        <img class="h-16" src="Logo - Dra Klariza.svg" alt="">
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex space-x-12 items-center">
+                    <a href="#sobre" class="text-sm uppercase tracking-widest text-brand-brown hover:text-brand-terracotta transition">Sobre Mim</a>
+                    <a href="#emdr" class="text-sm uppercase tracking-widest text-brand-brown hover:text-brand-terracotta transition">O que é EMDR?</a>
+                    <a href="#terapia" class="text-sm uppercase tracking-widest text-brand-brown hover:text-brand-terracotta transition">Terapia</a>
+                    <a href="https://wa.me/554499869940" target="_blank" class="border border-brand-terracotta text-brand-terracotta px-8 py-2 rounded-full hover:bg-brand-terracotta hover:text-white transition duration-300 text-sm tracking-wide font-medium">
+                        Agendar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen flex items-center pt-32 lg:pt-48 pb-20 overflow-hidden bg-[#FDFBF9]">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 w-full">
+            <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+                
+                <div class="lg:w-1/2 z-10 space-y-8 text-center lg:text-left">
+                    <span class="text-brand-terracotta text-xs tracking-[0.3em] uppercase font-bold">Psicologia Clínica & EMDR</span>
+                    <h1 class="text-5xl lg:text-6xl text-brand-brown leading-[1.15] font-serif">
+                        Acolha sua criança interior e ressignifique seus <span class="italic text-brand-terracotta">traumas</span>.
+                    </h1>
+                    <p class="text-lg text-brand-brown/70 leading-relaxed font-light max-w-lg mx-auto lg:mx-0">
+                        Um espaço seguro e sofisticado para adultos que buscam tratar feridas do passado através da terapia EMDR e reencontrar o equilíbrio emocional.
+                    </p>
+                    <div class="pt-6 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="https://wa.me/554499869940" target="_blank" class="bg-brand-terracotta text-white px-8 py-4 rounded-full text-lg font-serif italic hover:bg-brand-terracotta/90 transition shadow-xl flex items-center justify-center gap-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                            </svg>
+                            Agendar Consulta
+                        </a>
+                        <a href="#emdr" class="text-brand-brown border-b border-brand-brown pb-1 hover:text-brand-terracotta hover:border-brand-terracotta transition flex items-center justify-center gap-2 mt-2 sm:mt-0">
+                            Entender o tratamento
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 relative">
+                    <div class="relative z-10 rounded-t-full overflow-hidden border-[1px] border-brand-terracotta/20 p-4">
+                        <div class="rounded-t-full overflow-hidden h-[500px] w-full bg-brand-beige">
+                            <img src="foto1.png" 
+                                 alt="Espaço Terapêutico Acolhedor" 
+                                 class="w-full h-full object-cover object-top opacity-90 hover:scale-105 transition duration-1000">
+                        </div>
+                    </div>
+                    <div class="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-brand-terracotta/5 rounded-full blur-3xl -z-10"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="py-32 lg:py-40 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-16 lg:gap-24">
+                <div class="md:w-1/2 relative">
+                    <div class="absolute -top-4 -left-4 w-full h-full border border-brand-terracotta rounded-sm"></div>
+                    <img src="foto2.png" 
+                         alt="Dra. Klariza Silva" 
+                         class="w-full h-[550px] object-cover relative z-10 shadow-lg grayscale hover:grayscale-0 transition duration-500">
+                </div>
+
+                <div class="md:w-1/2 space-y-8">
+                    <h2 class="text-4xl text-brand-brown font-serif italic">Klariza Silva</h2>
+                    <span class="block text-xs uppercase tracking-widest text-brand-terracotta font-bold">Psicóloga • CRP 08/26102</span>
+                    
+                    <div class="text-brand-brown/80 space-y-6 font-light leading-relaxed text-lg">
+                        <p>
+                            Minha prática clínica é guiada pelo desejo de oferecer um ambiente próximo e humano, onde sua história é acolhida com profundidade.
+                        </p>
+                        <p>
+                            Especialista no tratamento de traumas, utilizo a abordagem <strong>EMDR</strong> para ajudar adultos a acessarem e tratarem feridas emocionais, muitas vezes enraizadas na infância.
+                        </p>
+                        <p>
+                            Acredito que olhar para a sua <strong>criança interior</strong> não é apenas um ato de cura, mas um passo essencial para construir uma vida adulta mais autônoma, leve e plena.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="emdr" class="py-32 lg:py-40 bg-[#FDFBF9] relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-beige/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-32 items-start">
+
+                <div class="space-y-10">
+                    <div>
+                        <span class="text-brand-terracotta text-xs tracking-[0.3em] uppercase font-bold">Ciência e Cura</span>
+                        <h2 class="text-4xl md:text-5xl text-brand-brown mt-4 leading-tight font-serif">
+                            O que é a terapia <span class="italic text-brand-terracotta">EMDR</span>?
+                        </h2>
+                    </div>
+
+                    <div class="text-brand-brown/80 font-light leading-relaxed text-lg space-y-8">
+                        <p>
+                            A sigla EMDR significa <strong class="text-brand-brown font-medium">Dessensibilização e Reprocessamento por meio dos Movimentos Oculares</strong>.
+                        </p>
+                        <p>
+                            Diferente da terapia tradicional, onde o foco principal é a "fala", o EMDR atua diretamente na <strong>neurofisiologia do cérebro</strong>. É uma abordagem psicoterapêutica reconhecida pela OMS como uma das mais eficazes para o tratamento de traumas.
+                        </p>
+                        
+                        <div class="border-l-2 border-brand-terracotta pl-6 py-2 my-10">
+                            <p class="italic text-brand-brown font-serif text-xl leading-relaxed">
+                                "O objetivo não é fazer você esquecer o passado, mas permitir que ele deixe de doer no presente."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:mt-4 space-y-12">
+                    <h3 class="text-2xl text-brand-brown font-serif mb-8 flex items-center gap-4">
+                        Como funciona o processo?
+                        <span class="h-px w-12 bg-brand-terracotta/30"></span>
+                    </h3>
+
+                    <div class="flex gap-6 group">
+                        <div class="flex-shrink-0">
+                            <div class="w-14 h-14 rounded-full border border-brand-terracotta/20 flex items-center justify-center text-brand-terracotta group-hover:bg-brand-terracotta group-hover:text-white transition duration-500 bg-white/50">
+                                <i data-lucide="eye" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-lg text-brand-brown font-serif mb-2 font-medium">Estimulação Bilateral</h4>
+                            <p class="text-sm text-brand-brown/70 font-light leading-relaxed">
+                                Utilizamos movimentos oculares (similares ao sono REM), toques ou sons para ativar alternadamente os dois hemisférios do cérebro.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6 group">
+                        <div class="flex-shrink-0">
+                            <div class="w-14 h-14 rounded-full border border-brand-terracotta/20 flex items-center justify-center text-brand-terracotta group-hover:bg-brand-terracotta group-hover:text-white transition duration-500 bg-white/50">
+                                <i data-lucide="unlock" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-lg text-brand-brown font-serif mb-2 font-medium">Desbloqueio de Memórias</h4>
+                            <p class="text-sm text-brand-brown/70 font-light leading-relaxed">
+                                Memórias traumáticas que estavam "congeladas" são acessadas e metabolizadas pelo sistema nervoso, perdendo sua carga negativa.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6 group">
+                        <div class="flex-shrink-0">
+                            <div class="w-14 h-14 rounded-full border border-brand-terracotta/20 flex items-center justify-center text-brand-terracotta group-hover:bg-brand-terracotta group-hover:text-white transition duration-500 bg-white/50">
+                                <i data-lucide="sun" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-lg text-brand-brown font-serif mb-2 font-medium">Alívio Sintomático</h4>
+                            <p class="text-sm text-brand-brown/70 font-light leading-relaxed">
+                                O resultado é a lembrança do fato sem a dor física, angústia ou pânico que ela causava anteriormente.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="terapia" class="py-32 lg:py-40 bg-brand-brown text-brand-light relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-terracotta opacity-10 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
+        <div class="max-w-6xl mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center gap-16 lg:gap-24">
+            <div class="md:w-1/2">
+                <h2 class="text-3xl md:text-4xl font-serif italic mb-8">Para quem é este tratamento?</h2>
+                <p class="text-brand-light/80 font-light text-lg mb-10 leading-relaxed">
+                    Meu foco clínico é o atendimento de homens e mulheres adultos que sentem que questões do passado ainda governam o presente.
+                </p>
+                <ul class="space-y-6">
+                    <li class="flex items-center gap-4"><div class="w-1.5 h-1.5 bg-brand-terracotta rounded-full"></div><span class="font-light text-lg">Quem sofre com ansiedade persistente ou pânico.</span></li>
+                    <li class="flex items-center gap-4"><div class="w-1.5 h-1.5 bg-brand-terracotta rounded-full"></div><span class="font-light text-lg">Quem possui memórias traumáticas da infância.</span></li>
+                    <li class="flex items-center gap-4"><div class="w-1.5 h-1.5 bg-brand-terracotta rounded-full"></div><span class="font-light text-lg">Quem sente padrões de comportamento repetitivos.</span></li>
+                </ul>
+                <a href="https://wa.me/554499869940" target="_blank" class="inline-block mt-12 bg-brand-light text-brand-brown px-10 py-4 rounded-full font-serif italic hover:bg-brand-terracotta hover:text-white transition duration-300">
+                    Agendar Avaliação
+                </a>
+            </div>
+            <div class="md:w-1/2">
+                <img src="foto3.jpeg" 
+                     alt="Paz e Equilíbrio" 
+                     class="rounded-lg shadow-2xl border border-brand-light/10 opacity-90">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 lg:py-40 bg-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-3xl text-brand-brown font-serif mb-20">Relatos de Transformação</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-brand-light p-10 rounded-tl-[3rem] rounded-br-[3rem] text-left relative hover:shadow-md transition duration-300">
+                    <span class="text-6xl font-serif text-brand-terracotta/20 absolute top-4 left-6">“</span>
+                    <p class="text-brand-brown/70 font-light italic mb-8 relative z-10 pt-4 text-base">
+                        A terapia EMDR com a Dra. Klariza foi um divisor de águas. Consegui acessar memórias que nem sabia que me afetavam tanto e finalmente me sinto livre daquela angústia constante.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-brand-terracotta rounded-full flex items-center justify-center text-white text-sm">A</div>
+                        <div>
+                            <p class="font-serif text-brand-brown text-base">Paciente A.M.</p>
+                            <p class="text-xs text-brand-brown/50 uppercase tracking-wider">Ansiedade</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-brand-light p-10 rounded-tl-[3rem] rounded-br-[3rem] text-left relative hover:shadow-md transition duration-300">
+                    <span class="text-6xl font-serif text-brand-terracotta/20 absolute top-4 left-6">“</span>
+                    <p class="text-brand-brown/70 font-light italic mb-8 relative z-10 pt-4 text-base">
+                        O acolhimento e a técnica da Klariza me fizeram sentir seguro desde a primeira sessão. Entender minha criança interior mudou como me relaciono hoje.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-brand-terracotta rounded-full flex items-center justify-center text-white text-sm">R</div>
+                        <div>
+                            <p class="font-serif text-brand-brown text-base">Paciente R.S.</p>
+                            <p class="text-xs text-brand-brown/50 uppercase tracking-wider">Traumas de Infância</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-brand-light p-10 rounded-tl-[3rem] rounded-br-[3rem] text-left relative hover:shadow-md transition duration-300">
+                    <span class="text-6xl font-serif text-brand-terracotta/20 absolute top-4 left-6">“</span>
+                    <p class="text-brand-brown/70 font-light italic mb-8 relative z-10 pt-4 text-base">
+                        Cheguei sem esperanças de que algo pudesse mudar. O processo foi leve, profundo e muito profissional. Recomendo para todos que buscam autoconhecimento real.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-brand-terracotta rounded-full flex items-center justify-center text-white text-sm">L</div>
+                        <div>
+                            <p class="font-serif text-brand-brown text-base">Paciente L.G.</p>
+                            <p class="text-xs text-brand-brown/50 uppercase tracking-wider">Autoestima</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 bg-[#FDFBF9]">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-3xl text-brand-brown font-serif text-center mb-16">Dúvidas Frequentes</h2>
+            
+            <div class="space-y-6">
+                <div class="border-b border-brand-terracotta/20 faq-item">
+                    <button class="w-full flex justify-between items-center py-6 text-left focus:outline-none group">
+                        <span class="text-xl text-brand-brown font-serif group-hover:text-brand-terracotta transition-colors">Como funcionam as sessões de EMDR?</span>
+                        <i data-lucide="chevron-down" class="w-6 h-6 text-brand-terracotta faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="text-brand-brown/70 font-light text-base pb-6 leading-relaxed">
+                            As sessões são estruturadas para garantir sua segurança emocional enquanto reprocessamos as memórias. Não utilizamos hipnose; você permanece consciente e no controle durante todo o processo. O objetivo é reduzir a carga dolorosa das lembranças.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="border-b border-brand-terracotta/20 faq-item">
+                    <button class="w-full flex justify-between items-center py-6 text-left focus:outline-none group">
+                        <span class="text-xl text-brand-brown font-serif group-hover:text-brand-terracotta transition-colors">Atende convênios?</span>
+                        <i data-lucide="chevron-down" class="w-6 h-6 text-brand-terracotta faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="text-brand-brown/70 font-light text-base pb-6 leading-relaxed">
+                            Os atendimentos são particulares, prezando pela qualidade do tempo de sessão e sigilo absoluto. Emitimos recibo para que você possa solicitar o reembolso junto ao seu convênio, caso seu plano ofereça essa modalidade.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="border-b border-brand-terracotta/20 faq-item">
+                    <button class="w-full flex justify-between items-center py-6 text-left focus:outline-none group">
+                        <span class="text-xl text-brand-brown font-serif group-hover:text-brand-terracotta transition-colors">Qual a duração do tratamento?</span>
+                        <i data-lucide="chevron-down" class="w-6 h-6 text-brand-terracotta faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p class="text-brand-brown/70 font-light text-base pb-6 leading-relaxed">
+                            A duração varia conforme a complexidade do trauma e a história de vida de cada paciente. No entanto, o EMDR é conhecido mundialmente por ser uma terapia mais objetiva e profunda se comparada a métodos tradicionais.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-brown text-brand-light py-24 border-t-4 border-brand-terracotta">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-3 gap-16">
+            <div>
+                <span class="font-serif text-2xl italic text-brand-white">Klariza Silva</span>
+                <p class="text-sm mt-2 opacity-70">Psicóloga • CRP 08/26102</p>
+                <p class="text-sm mt-6 opacity-60 leading-relaxed">
+                    Ajudando você a construir uma vida com mais sentido através da cura dos traumas.
+                </p>
+            </div>
+            
+            <div>
+                <h4 class="font-serif text-lg mb-6">Contato</h4>
+                <ul class="space-y-4 text-sm opacity-70 ">
+                    <li class="flex items-center gap-2"><i data-lucide="instagram" class="w-4 h-4 text-brand-white"></i> @psiklarizasilva</li>
+                    <li class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-brand-white"></i> klarizapsi@gmail.com</li>
+                    <li class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-brand-white"></i> Atendimento Online e Presencial</li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-serif text-lg mb-6">Links</h4>
+                <div class="flex flex-col gap-3 text-sm opacity-70 font-light">
+                    <a href="#sobre" class="hover:text-brand-terracotta transition">Sobre Mim</a>
+                    <a href="#emdr" class="hover:text-brand-terracotta transition">Método EMDR</a>
+                    <a href="https://wa.me/554499869940" target="_blank" class="hover:text-brand-terracotta transition">Agendar</a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-16 text-xs opacity-30 font-light border-t border-brand-light/10 pt-8">
+            &copy; 2026 Klariza Silva. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <a href="https://wa.me/554499869940" 
+       class="whatsapp-float bg-brand-terracotta text-white p-4 rounded-full shadow-2xl flex items-center justify-center gap-2 hover:bg-[#8a3b47] transition group"
+       target="_blank" aria-label="Falar no WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <script>
+        lucide.createIcons();
+
+        document.querySelectorAll('.faq-item button').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const icon = button.querySelector('.faq-icon');
+                
+                document.querySelectorAll('.faq-answer').forEach(item => {
+                    if (item !== answer && item.style.maxHeight) {
+                        item.style.maxHeight = null;
+                        item.style.opacity = '0';
+                        item.previousElementSibling.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+                    }
+                });
+
+                if (answer.style.maxHeight) {
+                    answer.style.maxHeight = null;
+                    answer.style.opacity = '0';
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                    answer.style.opacity = '1';
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
